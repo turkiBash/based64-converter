@@ -9,7 +9,7 @@ const App = () => {
   const [file, setFile] = useState([])
   const { hasCopied, onCopy } = useClipboard(file)
 
-  console.log(file)
+  
 
 
 
@@ -60,8 +60,9 @@ const App = () => {
           Clear
         </Button> */}
       </Flex>
-      <Textarea value={file} id="id" />
+      <Textarea value={file} mt={3} height="lg" width="xl"/>
       <Button mt={2} onClick={onCopy}>{hasCopied ? "Copied" : "Copy"}</Button>
+      <Button mt={2} type="reset" onClick={() => setFile([])}>Reset</Button>
     </Flex>
   );
 };
